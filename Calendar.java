@@ -29,8 +29,14 @@ public class Calendar {
         dayOfMonth =1;
         month =1;
         while(year != Wanted_year+1){
-				System.out.println(dayOfMonth + "/" + month + "/" + Wanted_year);
-                advance();
+            if(dayOfWeek == 1)
+			{
+				System.out.println(dayOfMonth + "/" + month + "/" + Wanted_year + " Sunday");
+			}
+            else{
+                System.out.println(dayOfMonth + "/" + month + "/" + Wanted_year);
+            }
+			advance();
         }
 	 }
 	
