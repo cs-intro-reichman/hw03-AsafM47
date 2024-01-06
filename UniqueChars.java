@@ -1,3 +1,5 @@
+import javax.print.DocFlavor.STRING;
+
 /** String processing exercise 2. */
 public class UniqueChars {
     public static void main(String[] args) {  
@@ -11,7 +13,23 @@ public class UniqueChars {
      * unless they are space characters.
      */
     public static String uniqueChars(String s) {
-        // Replace the following statement with your code
-        return null;
+        String newString = "";
+        for(int i = 0; i < s.length(); i++){
+           if(newString.length() > 0){
+                if(s.charAt(i) != ' ')
+                {
+                    if(newString.indexOf(s.charAt(i))== -1){
+                        newString += s.charAt(i);
+                    }
+                }
+                else{
+                    newString += s.charAt(i);
+                }
+            }
+           else{
+                newString += s.charAt(i);
+           }
+        }
+        return newString;
     }
 }
