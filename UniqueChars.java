@@ -15,7 +15,7 @@ public class UniqueChars {
     public static String uniqueChars(String s) {
         String newString = "";
         for(int i = 0; i < s.length(); i++){
-           if(newString.length() > 0){
+           if(newString.length() > 0){ // #feedback - this check is not needed, the first letter will always be unique.
                 if(s.charAt(i) != ' ')
                 {
                     if(newString.indexOf(s.charAt(i))== -1){
@@ -27,7 +27,7 @@ public class UniqueChars {
                 }
             }
            else{
-                newString += s.charAt(i);
+                newString += s.charAt(i); // # feedback - these elses are not needed, you can extract "newString += s.charAt(i);" to outside of "if" since it's always needed.
            }
         }
         return newString;
