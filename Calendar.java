@@ -14,7 +14,7 @@ public class Calendar {
 	 * number of Sundays that occured on the first day of the month during this period.
 	 */
 	public static void main(String args[]) {
-        int Wanted_year = Integer.parseInt(args[0]);
+        int Wanted_year = Integer.parseInt(args[0]); // #feedback - according to variable naming best practices, it should be wantedYear (camelCase).
 		// Advances the date and the day-of-the-week from 1/1/1900 till 31/12/1999, inclusive.
 	    // Prints each date dd/mm/yyyy in a separate line. If the day is a Sunday, prints "Sunday".
 	    // The following variable, used for debugging purposes, counts how many days were advanced so far.
@@ -71,6 +71,8 @@ public class Calendar {
 		 
     // Returns true if the given year is a leap year, false otherwise.
 	private static boolean isLeapYear(int year) {
+		// #feedback - you can directly return the condition instead of having the isLeapYear variable -
+		// return (year % 400) == 0 || (year % 4 == 0 && year % 100 != 0)
 		boolean isLeapYear = false;
 		if((year % 400) == 0 || (year % 4 == 0 && year % 100 != 0)){
 			isLeapYear = true;
@@ -83,10 +85,10 @@ public class Calendar {
 	// February has 28 days in a common year, and 29 days in a leap year.
 	// All the other months have 31 days.
 	private static int nDaysInMonth(int month, int year) {
-		int DaysInMonth = 0;
+		int DaysInMonth = 0; // #feedback - should be daysInMonth.
 		if(month == 2){
 			if(isLeapYear(year) == true){
-				DaysInMonth = 29;
+				DaysInMonth = 29; // #feedback - you can return the number directly instead of having DaysInMonth variable, e.g. - return 29;
 			}
 			else{
 				DaysInMonth = 28;
